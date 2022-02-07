@@ -1,0 +1,9 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: rz-asm-llvm
+Upstream-Contact: RizinOrg <info@rizin.re>
+Source: https://github.com/rizinorg/rz-asm-llvm
+
+Files: .github/** .clang-format .gitignore **/.gitignore CMakeLists.txt **/CMakeLists.txt README.md test/**
+Copyright: 2022 RizinOrg <info@rizin.re>
+License: LGPL-3.0-only
+
