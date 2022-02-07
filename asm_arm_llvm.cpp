@@ -107,10 +107,12 @@ static RzAsmPlugin asm_plugin = {
 	/* .features = */ nullptr
 };
 
-RZ_API extern "C" RzLibStruct rizin_plugin = {
+extern "C" {
+RZ_API RzLibStruct rizin_plugin = {
 	/* .type = */ RZ_LIB_TYPE_ASM,
 	/* .data = */ &asm_plugin,
 	/* .version = */ RZ_VERSION,
 	/* .free = */ nullptr,
 	/* .pkgname = */ "rz-asm-llvm"
 };
+}
