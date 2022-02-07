@@ -50,9 +50,9 @@ static int assemble(RzAsm *a, RzAsmOp *op, const char *buf) {
 	SourceMgr src;
 	src.AddNewSourceBuffer(MemoryBuffer::getMemBufferCopy(buf), SMLoc());
 
-	std::string arch_name = a->bits == 64 ? "aarch64" : (a->bits == 16 ? "thumb" : "arm");
-	std::string cpu_name = "";
-	std::string features_str = "";
+	std::string arch_name = a->bits == 64 ? "aarch64" : "arm";
+	std::string cpu_name = "cortex-a78";
+	std::string features_str = a->bits == 16 ? "+thumb-mode" : "";
 
 	Triple triple;
 	std::string triple_name = triple.getTriple();

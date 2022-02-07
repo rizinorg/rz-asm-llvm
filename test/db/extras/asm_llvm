@@ -1,0 +1,43 @@
+NAME=plugin loaded
+FILE=
+CMDS=<<EOF
+!rz-asm -L | grep llvm
+EOF
+EXPECT=<<EOF
+a___  16 32 64   arm.llvm    LGPL3   Assembler using LLVM MC (by thestr4ng3r)
+EOF
+EXPECT_ERR=
+RUN
+
+NAME=arm 16
+FILE=
+CMDS=<<EOF
+!rz-asm -a arm.llvm -b 16 "mov r3, r4"
+EOF
+EXPECT=<<EOF
+2346
+EOF
+EXPECT_ERR=
+RUN
+
+NAME=arm 32
+FILE=
+CMDS=<<EOF
+!rz-asm -a arm.llvm -b 32 "mov r3, r4, lsl #0x10"
+EOF
+EXPECT=<<EOF
+0438a0e1
+EOF
+EXPECT_ERR=
+RUN
+
+NAME=arm 64
+FILE=
+CMDS=<<EOF
+!rz-asm -a arm.llvm -b 64 "mov x0, x2"
+EOF
+EXPECT=<<EOF
+e00302aa
+EOF
+EXPECT_ERR=
+RUN

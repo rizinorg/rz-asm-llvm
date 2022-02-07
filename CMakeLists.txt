@@ -19,6 +19,7 @@ set(RIZIN_INSTALL_PLUGDIR "${Rizin_PLUGINDIR}" CACHE STRING "Directory to instal
 
 add_library(asm_arm_llvm SHARED asm_arm_llvm.cpp)
 target_link_libraries(asm_arm_llvm PUBLIC Rizin::Asm)
+set_target_properties(asm_arm_llvm PROPERTIES OUTPUT_NAME asm_arm_llvm PREFIX "")
 
 # this is all very broken, see also https://lists.llvm.org/pipermail/llvm-dev/2017-November/119206.html
 if(LLVM_LINK_LLVM_DYLIB)
