@@ -52,7 +52,7 @@ static int assemble(RzAsm *a, RzAsmOp *op, const char *buf) {
 
 	std::string arch_name = a->bits == 64 ? "aarch64" : "arm";
 	std::string cpu_name = "cortex-a78";
-	std::string features_str = a->bits == 16 ? "+thumb-mode" : "";
+	std::string features_str = a->bits == 16 ? "+thumb-mode" : "+mte,+flagm,+rcpc-immo,+pauth,+ls64";
 
 	Triple triple;
 	std::string triple_name = triple.getTriple();
